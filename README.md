@@ -1,7 +1,6 @@
 <h1 align="center">Hi there, I'm gawston 👋</h1>
-<h3 align="center">A passionate frontend developer from Thailand</h3>
 
-- 🔭 I’m currently working on **gawston-bot(discord.py)**
+- 🔭 I’m currently studying on **KMUTNB**
 
 - 🌱 I’m currently learning **html, css, js for frontend**
 
