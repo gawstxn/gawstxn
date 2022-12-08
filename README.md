@@ -2,7 +2,7 @@
 
 - 📚 I’m currently studying in **KMUTNB**
 
-- 🌱 I’m currently learning **html, css, js for frontend**
+- 🌱 I’m currently learning **Front-End**
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
