@@ -2,5 +2,3 @@
 
 - 📚 I’m currently studying in **KMUTNB**
 
-- 🌱 I’m currently learning **Front-End**
-
