@@ -1,4 +1,4 @@
-<h1 align="center">Hi there, I'm gawston 👋</h1>
+# Hi there, I'm gawston 👋
 
-- 📚 I’m currently studying in **KMUTNB**
+- 📚 I’m currently studying in **King Mongkut's University of Technology North Bangkok**
 
