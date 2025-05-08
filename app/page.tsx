@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Home() {
   return (
-    <main className="w-full h-screen flex justify-center items-center overflow-hidden">
+    <main className="w-full h-[100dvh] flex justify-center items-center overflow-hidden">
       <div className="flex flex-col items-center z-10">
         <Image src={"/img/logo.png"} width={416} height={273} alt="" draggable={false} className="puff-in-center animate-ease-in-out mb-5 z-10 scale-75 md:scale-100 object-cover"/>
         <p className="text-8xl puff-in-center animate-ease-in-out">*</p>
