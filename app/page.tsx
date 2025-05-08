@@ -8,7 +8,7 @@ export default function Home() {
         <Image src={"/img/logo.png"} width={416} height={273} alt="" draggable={false} className="puff-in-center animate-ease-in-out mb-5 z-10 scale-75 md:scale-100 object-cover"/>
         <p className="text-8xl puff-in-center animate-ease-in-out">*</p>
         <div className="flex items-center gap-4 puff-in-center animate-ease-in-out ">
-          <Link href={"https://github.com/gawston"} target="_blank" className="hover:underline text-xl -mt-8 uppercase font-extrabold z-20">
+          <Link href={"https://github.com/gawstxn"} target="_blank" className="hover:underline text-xl -mt-8 uppercase font-extrabold z-20">
             Github
           </Link>
           <Link href={"https://www.instagram.com/gawstxn/"} target="_blank" className="hover:underline text-xl -mt-8 uppercase font-extrabold z-20">
