@@ -19,6 +19,7 @@ export default function Home() {
           </Link>
         </div>
       </div>
+      <div className="fixed top-0 left-0 w-full h-full bg-black/50 z-[1]"></div>
       <Image src={"/img/bg.jpg"} width={1920} height={1080} alt="" draggable={false} className="bg-puff-in-center animate-ease-in-out fixed top-0 left-0 w-[100vw] h-[100vh] bg-center object-cover"/>
     </main>
   )

@@ -8,6 +8,11 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+::selection {
+  color: #FF0040;
+  background-color: #000000;
+}
+
 @keyframes puff-in-center {
   0% {
     -webkit-transform: scale(2);
