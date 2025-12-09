@@ -1,4 +1,4 @@
-![Images](banner.jpg)
+![Images](GAWSTXN.png)
 
 # Hello World 🌏 I'm gawstxn
 
