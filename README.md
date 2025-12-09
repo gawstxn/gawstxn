@@ -2,7 +2,7 @@
 
 # Hey 👋 What's up?
 
-My name is **Naruenat Khamwaree** and I'm a **Fullstack Developer**, from **Thailand** 🇹🇭.
+My name is **Naruenat Khamwaree** and I'm a **Fullstack Developer**, from **Thailand**
 
 ## About me
 ✨ Creating bugs since **2021** <br/>
