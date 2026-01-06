@@ -13,7 +13,7 @@ My name is **Naruenat Khamwaree** and I'm a **Fullstack Developer**, from **Thai
 ## I code with
 <div align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=nodejs,js,ts,react,nextjs,astro,express,prisma,supabase,postgres,postman,tailwind" />
+    <img src="https://skillicons.dev/icons?i=nodejs,js,ts,react,nextjs,astro,express,prisma,supabase,postgres,postman,tailwind,cloudflare" />
   </a>
 </div>
 
