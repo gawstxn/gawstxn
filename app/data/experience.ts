@@ -24,11 +24,11 @@ export const experiences: ExperienceItem[] = [
     location: "Bangkok, Thailand",
     period: "Nov 2025 – Feb 2026",
     bullets: [
-      "Built a full-stack Loyalty Platform integrated with LINE Official Account, supporting point accumulation, reward redemption, and automated customer interactions.",
-      "Implemented a customizable activity system within the Loyalty Platform, allowing customers to participate in activities to earn points and redeem rewards.",
-      "Built a LINE OA–integrated badminton court booking system with flexible time selection, optional add-ons, and automated booking notifications.",
+      "Developed a full-stack loyalty platform integrated with the LINE Official Account, enabling point accumulation, reward redemption, and automated customer engagement.",
+      "Implemented a configurable activity and reward management system that allowed customers to participate in campaigns and redeem loyalty points.",
+      "Built a badminton court booking system integrated with LINE Official Account, supporting flexible time-slot selection, optional add-ons, and automated booking notifications.",
     ],
-    tags: ["Next.js", "TypeScript", "Node.js", "LINE OA", "PostgreSQL"],
+    tags: ["Next.js", "TypeScript", "PostgreSQL", "LINE Official Account"],
   },
 
   /* ── Education ── */
@@ -41,9 +41,9 @@ export const experiences: ExperienceItem[] = [
     period: "2022 – 2026",
     bullets: [
       "GPAX 3.36 — Second Class Honours.",
-      "Senior capstone: Loyalty Program web app with LINE OA integration, point tracking, reward redemption, and activity system.",
+      "Capstone Project: Developed a full-stack loyalty platform with LINE Official Account integration, supporting point tracking, reward redemption, and configurable activity campaigns.",
     ],
-    tags: ["Frontend", "Web Dev", "AI Minor"],
+    tags: ["Web Development", "AI", "Full-Stack"],
   },
   {
     id: "phanomsarakham-tvet",

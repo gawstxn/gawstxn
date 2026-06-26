@@ -6,7 +6,7 @@ export const skillCategories = [
   {
     id: "languages",
     title: "Languages",
-    skills: ["JavaScript", "TypeScript"],
+    skills: ["JavaScript", "TypeScript", "Python"],
   },
   {
     id: "frontend",
@@ -15,20 +15,25 @@ export const skillCategories = [
   },
   {
     id: "backend",
-    title: "Backend & ORM",
-    skills: ["Node.js", "Express.js", "Hono", "Prisma", "Sequelize", "Drizzle"],
+    title: "Backend",
+    skills: ["Nest.js", "Express.js", "Hono", "FastAPI"],
   },
   {
     id: "database",
-    title: "Database & Tools",
-    skills: ["PostgreSQL", "MongoDB", "Supabase", "SQLite", "Git", "GitHub"],
+    title: "Database",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "SQLite"],
+  },
+  {
+    id: "ai-integration",
+    title: "AI & Integrations",
+    skills: ["Gemini API", "LINE Messaging API", "Workflow Automation"],
+  },
+  {
+    id: "tools",
+    title: "Tools",
+    skills: ["Git", "GitHub", "Docker"],
   },
 ] as const;
 
 /* Edit this list to update the "Currently Learning" banner */
-export const currentlyLearning = [
-  "Playwright",
-  "Automated Testing",
-  "Nest.js",
-  "WebSockets",
-] as const;
+export const currentlyLearning = ["Go", "Gin", "GORM", "Websocket"] as const;

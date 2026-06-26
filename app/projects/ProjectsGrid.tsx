@@ -8,7 +8,7 @@ import {
   type ProjectCategory,
 } from "@/app/data/projects";
 
-const CATEGORIES: ProjectCategory[] = ["all", "web", "ai"];
+const CATEGORIES: ProjectCategory[] = ["all", "feature", "others"];
 
 export default function ProjectsGrid() {
   const [active, setActive] = useState<ProjectCategory>("all");

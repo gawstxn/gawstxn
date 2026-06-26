@@ -19,16 +19,17 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://gawstxn.dev"),
   title: {
-    default: "Naruenat Khamwaree — Junior Full-Stack Developer & AI Engineer",
+    default:
+      "Naruenat Khamwaree — Junior Full-Stack Developer & Software Engineer",
     template: "%s | Naruenat Khamwaree",
   },
   description:
-    "Portfolio of Naruenat Khamwaree, a Junior Full-Stack Developer and AI Engineer specializing in TypeScript, React, Next.js, and LINE OA integrations. Based in Bangkok, Thailand.",
+    "Portfolio of Naruenat Khamwaree, a Junior Full-Stack Developer and Software Engineer specializing in TypeScript, React, Next.js, and LINE OA integrations. Based in Bangkok, Thailand.",
   keywords: [
     "gawstxn",
     "Naruenat Khamwaree",
     "Junior Full-Stack Developer",
-    "AI Engineer",
+    "Software Engineer",
     "React",
     "Next.js",
     "TypeScript",
@@ -44,7 +45,8 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "https://gawstxn.dev",
-    title: "Naruenat Khamwaree — Junior Full-Stack Developer & AI Engineer",
+    title:
+      "Naruenat Khamwaree — Junior Full-Stack Developer & Software Engineer",
     description:
       "IT graduate building clean interfaces and reliable software. React · Next.js · TypeScript · LINE OA · Based in Bangkok.",
     siteName: "Naruenat Khamwaree Portfolio",
@@ -53,13 +55,14 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Naruenat Khamwaree — Junior Full-Stack Developer & AI Engineer",
+        alt: "Naruenat Khamwaree — Junior Full-Stack Developer & Software Engineer",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Naruenat Khamwaree — Junior Full-Stack Developer & AI Engineer",
+    title:
+      "Naruenat Khamwaree — Junior Full-Stack Developer & Software Engineer",
     description:
       "IT graduate building clean interfaces and reliable software. React · Next.js · TypeScript · Based in Bangkok.",
     images: ["/og-image.png"],

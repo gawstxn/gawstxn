@@ -6,9 +6,9 @@ export const personalInfo = {
   name: "Naruenat Khamwaree",
   nameTag: "GAWSTXN.DEV",
   title: "Junior Full-Stack Developer",
-  titleAccent: "& AI Engineer",
+  titleAccent: "& Software Engineer",
   subtitle:
-    "I build clean web applications and intelligent AI solutions. Bridging the gap between modern frontends, scalable backends, and data-driven models.",
+    "I build production-ready web applications with modern technologies and AI integrations. Passionate about creating scalable software that solves real-world business problems.",
   location: "Bangkok, Thailand",
   email: "naruenat.khamwaree@gmail.com",
   phone: "092-870-9655", // TODO: Update with your actual phone number

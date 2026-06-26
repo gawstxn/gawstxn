@@ -35,7 +35,7 @@ export default function HeroSection() {
 
   /* ── Type boot lines one char at a time ── */
   useEffect(() => {
-    if (bootDone) return;
+    if (!mounted || bootDone) return;
     if (currentLine >= bootLines.length) {
       setTimeout(() => setBootDone(true), 400);
       return;
@@ -59,7 +59,7 @@ export default function HeroSection() {
       }, 80);
       return () => clearTimeout(t);
     }
-  }, [currentLine, currentChar, bootDone]);
+  }, [currentLine, currentChar, bootDone, mounted]);
 
   /* ── Hero content reveal class ── */
   const heroClass = mounted
@@ -191,7 +191,9 @@ export default function HeroSection() {
         </div>
 
         {/* ── Right: Terminal window ── */}
-        <div className="hidden lg:block">
+        <div
+          className={`hidden lg:block transition-all duration-1000 delay-[400ms] ${heroClass}`}
+        >
           <div
             className="rounded-lg border border-[#1e2e24] bg-[#080808] overflow-hidden"
             style={{
@@ -199,6 +201,7 @@ export default function HeroSection() {
                 "0 0 0 1px rgba(0,255,136,0.08), 0 8px 40px rgba(0,0,0,0.8), 0 0 80px rgba(0,255,136,0.12), 0 0 24px rgba(0,255,136,0.08)",
             }}
           >
+
             {/* Terminal title bar */}
             <div className="flex items-center gap-2 border-b border-[#1a1a1a] px-4 py-3">
               <span className="h-3 w-3 rounded-full bg-[#ff5f57]" />

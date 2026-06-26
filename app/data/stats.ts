@@ -3,10 +3,10 @@
    ───────────────────────────────────────────────────── */
 
 export const stats = [
-  { value: "2+", label: "Years Experience" },
-  { value: "10+", label: "Projects Completed" },
-  { value: "∞", label: "Cups of Coffee" },
-  { value: "100%", label: "Delivery Rate" },
+  { value: "15+", label: "Projects Built" },
+  { value: "10+", label: "Technologies" },
+  { value: "4+", label: "Year of Coding" },
+  { value: "100%", label: "Commitment" },
 ] as const;
 
 export const philosophies = [
@@ -15,20 +15,20 @@ export const philosophies = [
     lucideIcon: "Code2",
     title: "Quality Over Speed",
     description:
-      "Rushing code creates technical debt. I prioritize writing clean, readable, and maintainable TypeScript that teammates can build on confidently.",
+      "I value maintainable, readable, and scalable code over quick fixes. Building software that others can confidently extend is more important than shipping fast.",
   },
   {
     id: "reliability",
     lucideIcon: "ShieldCheck",
     title: "Reliability Through Testing",
     description:
-      "Software that isn't tested isn't finished. Thoughtful testing — from unit to E2E — is what separates a working product from a trustworthy one.",
+      "Reliable software comes from thoughtful testing and continuous improvement. Every feature should be stable before it reaches users.",
   },
   {
     id: "growth",
     lucideIcon: "TrendingUp",
     title: "Always Learning",
     description:
-      "The frontend ecosystem moves fast. I stay curious, pick up new tools deliberately, and apply what I learn to ship better experiences with every project.",
+      "Technology evolves rapidly. I continuously explore new tools, frameworks, and best practices to become a better software engineer.",
   },
 ] as const;

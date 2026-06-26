@@ -58,28 +58,27 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 mb-20">
           <RevealWrapper className="lg:col-span-3 flex flex-col gap-5 text-[#999] leading-relaxed">
             <p>
-              I&apos;m an IT graduate from KMUTNB, focused on building intelligent
-              and robust software. My technical foundation spans both full-stack web
-              development with TypeScript and building machine learning solutions
-              with Python — allowing me to bridge the gap between data-driven AI
-              models and seamless user interfaces.
+              I'm an IT graduate from King Mongkut's University of Technology
+              North Bangkok with a strong passion for building modern full-stack
+              web applications.
             </p>
             <p>
-              During my cooperative internship at{" "}
-              <span className="text-white">Codemonday</span>, I developed a
-              full-stack LINE OA loyalty platform — shipping a point management
-              system, reward redemption flows, and an integrated court booking
-              application with automated notifications, end-to-end.
+              During my cooperative education at{" "}
+              <span className="text-white">Codemonday</span>, I developed
+              production-ready systems including a LINE Official Account loyalty
+              platform and an integrated court booking application with
+              automated customer workflows.
             </p>
             <p>
-              I&apos;m actively looking for my first full-time role as a{" "}
-              <span className="text-accent">Junior Full-Stack Developer</span> or{" "}
-              <span className="text-accent">AI Engineer</span>.
-              Currently deepening my skills in{" "}
-              <span className="text-accent">AI Integrations</span>,{" "}
-              <span className="text-accent">Cloud Deployments</span>, and{" "}
-              <span className="text-accent">Modern Web Technologies</span> — always adding
-              tools that help me build smarter and more capable software.
+              I enjoy designing scalable software architectures, integrating AI
+              APIs into real-world applications, and continuously learning new
+              technologies to improve both development experience and product
+              quality.
+            </p>
+            <p>
+              Currently, I'm seeking my first full-time opportunity as a{" "}
+              <span className="text-accent">Junior Full-Stack Developer</span>{" "}
+              or <span className="text-accent">Software Engineer</span>.
             </p>
           </RevealWrapper>
 
