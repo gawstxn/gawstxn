@@ -28,6 +28,7 @@ export const projects: Project[] = [
       "A production-ready personal finance platform featuring AI-assisted transaction recording, budgeting, subscription tracking, savings goals, and financial analytics.",
     category: "feature",
     live: "https://okane.gawstxn.dev",
+    github: "https://github.com/gawstxn/okane",
     tags: [
       "Next.js",
       "TypeScript",
@@ -59,8 +60,8 @@ export const projects: Project[] = [
     description:
       "A CS2-inspired case opening simulator featuring weighted randomization, inventory management, case battles, trade-up contracts, a marketplace, and daily progression.",
     category: "others",
-    live: "https://cscase.gawstxn.dev",
     github: "https://github.com/gawstxn/cs-case",
+    live: "https://cscase.gawstxn.dev",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
   },
 ];
