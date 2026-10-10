@@ -1,0 +1,36 @@
+---
+import Icon from './Icon.astro';
+import ProjectVisual from './ProjectVisual.astro';
+import { projects } from '../data/projects';
+import ProjectMockup from './ProjectMockup.astro';
+---
+{projects.map((project, index) => <dialog data-lenis-prevent id={`dialog-${project.slug}`} class="project-dialog" aria-labelledby={`dialog-title-${project.slug}`}>
+  <div class="dialog-top"><span class="dialog-bar-title">Selected work <span>/</span> {project.title}</span><button class="dialog-close circle-button" aria-label="Close project details" autofocus><Icon name="close" /></button></div>
+  <div class="dialog-inner">
+  <div class="dialog-heading"><div><p class="dialog-category">{project.category}</p><h2 id={`dialog-title-${project.slug}`} aria-label={project.title}>{project.title.split(' ').map((word) => <><span class="dialog-word-mask" aria-hidden="true"><span class="dialog-title-word">{word}</span></span>{' '}</>)}</h2></div><p class="dialog-description">{project.description}</p></div>
+  <section class="dialog-gallery" aria-label={`${project.title} images`} aria-roledescription="carousel" data-gallery>
+    <div class="gallery-track" id={`gallery-${project.slug}`} tabindex="0" aria-label="Project images. Use left and right arrow keys to browse.">
+      <figure class="gallery-slide" role="group" aria-roledescription="slide" aria-label={`1 of ${project.gallery.length + 1}: Project cover`}>
+        <div class={`gallery-media gallery-media-${project.slug}`}><ProjectVisual slug={project.slug} /></div>
+        <figcaption><span>Project cover</span><span>{project.image ? 'Public app preview' : 'Interface concept / sample data'}</span></figcaption>
+      </figure>
+      {project.gallery.map((image, imageIndex) => <figure class="gallery-slide" role="group" aria-roledescription="slide" aria-label={`${imageIndex + 2} of ${project.gallery.length + 1}: ${image.title}`}>
+        <div class={`gallery-media gallery-media-${project.slug}`}><ProjectMockup slug={project.slug} view={image.view} title={image.title} /></div>
+        <figcaption><span>{image.title}</span><span>Interface mockup / sample data</span></figcaption>
+      </figure>)}
+    </div>
+    <div class="gallery-caption"><span data-gallery-caption>Project cover</span><span data-gallery-note>{project.image ? 'Public app preview' : 'Interface concept / sample data'}</span></div>
+    <div class="gallery-controls">
+      <div class="gallery-pickers" role="group" aria-label="Choose project image">
+        <button type="button" data-gallery-index="0" aria-label="Show project cover" aria-current="true"><span></span></button>
+        {project.gallery.map((image, imageIndex) => <button type="button" data-gallery-index={imageIndex + 1} aria-label={`Show ${image.title}`} aria-current="false"><span></span></button>)}
+      </div>
+      <div class="gallery-navigation"><span class="gallery-count" aria-live="polite" aria-atomic="true">1 / {project.gallery.length + 1}</span><button type="button" class="circle-button gallery-previous" data-gallery-step="-1" aria-label="Previous image" aria-controls={`gallery-${project.slug}`} aria-disabled="true"><Icon /></button><button type="button" class="circle-button gallery-next" data-gallery-step="1" aria-label="Next image" aria-controls={`gallery-${project.slug}`}><Icon /></button></div>
+    </div>
+  </section>
+  <div class="dialog-details"><div><h3>What it does</h3><ul>{project.features.map((feature) => <li>{feature}</li>)}</ul></div><div><h3>Built with</h3><div class="stack-tags">{project.stack.map((item) => <span>{item}</span>)}</div></div></div>
+  <div class="dialog-links">{project.demo && <a href={project.demo} target="_blank" rel="noreferrer" class="button-primary">Visit live project <Icon /></a>}{project.github && <a href={project.github} target="_blank" rel="noreferrer" class="text-link">Source on GitHub <Icon /></a>}{!project.demo && <p>This project was developed during cooperative education. A public demo is not available.</p>}</div>
+  <nav class="project-pagination" aria-label="Browse projects">
+    {[{ project: projects[(index - 1 + projects.length) % projects.length], direction: -1, label: 'Previous project' }, { project: projects[(index + 1) % projects.length], direction: 1, label: 'Next project' }].map((item) => <button type="button" data-project-switch={item.project.slug} data-direction={item.direction} class:list={['project-neighbor', { 'project-neighbor-next': item.direction === 1 }]}><span>{item.label}</span><strong>{item.project.title}</strong><Icon /></button>)}
+  </nav>
+</div></dialog>)}

@@ -1,59 +1,33 @@
-<!-- BEGIN:nextjs-agent-rules -->
-# This is NOT the Next.js you know
+# Portfolio agent notes
 
-This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
-<!-- END:nextjs-agent-rules -->
+## Stack and layout
 
----
+- Astro, TypeScript in strict mode, Tailwind CSS v4, GSAP, and Lenis.
+- `src/pages/index.astro` composes the single-page portfolio.
+- `src/components/` contains section components and project artwork.
+- `src/data/` contains profile, experience, projects, tools, and appearance settings.
+- `src/styles/global.css` contains Tailwind theme tokens and responsive styles.
+- `src/scripts/` contains navigation, project dialogs, carousel, toolkit, and motion.
+- `public/` contains the original portrait, resume, and public preview assets.
+- `README.md` is the GitHub profile README. Preserve it and `public/github.png`.
+- `DEVELOPMENT.md` contains development and editing instructions.
 
-# Portfolio-Specific Agent Notes
+## Conventions
 
-## Stack
-- **Next.js 16.2.6** (App Router) + **React 19** + **TypeScript** + **Tailwind CSS v4**
-- No `tailwind.config.js` — all theme tokens are in `app/globals.css` inside `@theme inline { ... }`
-- `@import "tailwindcss"` is the v4 way; do NOT use `@tailwind base/components/utilities`
+- Use the existing npm lockfile. Ask before adding dependencies.
+- Respond in Thai; write code, comments, and commit messages in English.
+- Keep factual content in data files and respect the owner's confirmed information.
+- Honor reduced motion, keyboard access, and motion switches in `src/data/site.ts`.
+- Project artwork labeled as interface concepts uses sample data; do not claim it is a production screenshot.
+- Keep `README.md` unchanged unless the owner explicitly requests an edit.
+- Never read or commit secrets. Ignore generated files and hosting metadata.
+- Never commit or push unless explicitly requested. Create a feature or fix branch before edits.
+- Do not force-push, rewrite history, disable hooks, or change Git configuration.
 
-## File Structure
-```
-app/
-  layout.tsx          ← Root layout (html + body tags, fonts, metadata)
-  page.tsx            ← Assembles all section components
-  globals.css         ← Tailwind v4 entry + custom design tokens + keyframes
-  data/
-    portfolio.ts      ← All demo content (personalInfo, projects, skills, stats)
-  components/
-    Navbar.tsx        ← 'use client' — sticky nav, IntersectionObserver active links
-    HeroSection.tsx   ← 'use client' — terminal boot animation + hero copy
-    AboutSection.tsx  ← Server component — stats, bio, philosophy cards
-    ProjectsSection.tsx ← 'use client' — filterable project card grid
-    SkillsSection.tsx ← Server component — 4-column skill matrix
-    ContactSection.tsx  ← Server component — email, socials
-    Footer.tsx        ← 'use client' — copyright, scroll-to-top
-    RevealWrapper.tsx ← 'use client' — IntersectionObserver scroll reveal
-```
+## Verification
 
-## Design System (Tailwind v4)
-Custom tokens defined in `globals.css` via `@theme inline`:
-- `text-accent` / `bg-accent` → `#00ff88` neon green
-- `font-mono` → JetBrains Mono (var `--font-jetbrains`)
-- `font-sans` → Inter (var `--font-inter`)
-- `animate-blink` → terminal cursor blinking keyframe
-- `animate-fade-up`, `animate-fade-in`, `animate-slide-right`
-- CSS class `.bg-grid` → subtle dot grid background
-- CSS class `.card-hover` → border + glow hover transition
-- CSS class `.reveal` / `.reveal.visible` → scroll reveal transition
-- CSS class `.text-glow` → neon text-shadow
-- CSS class `.accent-glow` → neon box-shadow
-
-## Key Conventions
-- `'use client'` required for any component using hooks (useState, useEffect, useRef) or browser APIs
-- Scroll reveal: wrap sections in `<RevealWrapper>`, which adds `.visible` class via IntersectionObserver
-- All content lives in `app/data/portfolio.ts` — edit there to customize
-- Section IDs: `#home`, `#about`, `#projects`, `#skills`, `#contact`
-- Section numbering in labels: `01 // HOME`, `02 // ABOUT`, etc.
-
-## Next.js 16 Gotchas
-- `params` in dynamic routes is now a **Promise** — must `await params` or use `React.use(params)`
-- Layouts do NOT re-render on navigation — use `usePathname()` in a Client Component for active states
-- No manual `<head>` tags — use the `metadata` export or `generateMetadata()`
-- `next/font/google` function call API is unchanged from v13+ (Geist, Inter, JetBrains_Mono etc.)
+- Run `npm run build` for Astro/TypeScript diagnostics and the production build.
+- Run `npm run typecheck` when only checking types.
+- No separate lint or unit-test script is currently configured.
+- Verify interactions in the browser when changing UI behavior, including mobile layouts.
+- Report changed files, verification, and any remaining limitations.

@@ -1,0 +1,6 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/profile';
+import Availability from './Availability.astro';
+---
+<section id="contact" class="contact-section"><div class="page-width"><div class="contact-intro flex justify-between"><p>Have something in mind?</p><Availability /></div><a class="contact-title" href={`mailto:${profile.email}`}><h2>Let's talk<br/>software.</h2><Icon /></a><div class="contact-bottom"><a class="contact-email" href={`mailto:${profile.email}`}>{profile.email}</a><p class="multiline">{profile.contactNote}</p></div></div></section>

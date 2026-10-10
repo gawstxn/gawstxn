@@ -1,0 +1,4 @@
+---
+import { profile } from '../data/profile';
+---
+<span class:list={['availability', { 'is-employed': !profile.available }]}><i></i>{profile.available ? 'Available for work' : 'Not Available'}</span>

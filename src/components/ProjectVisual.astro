@@ -1,0 +1,19 @@
+---
+import { projects } from '../data/projects';
+import LoyaltyVisual from './LoyaltyVisual.astro';
+import CourtVisual from './CourtVisual.astro';
+interface Props { slug: string; }
+const { slug } = Astro.props;
+const project = projects.find((item) => item.slug === slug);
+---
+<div class:list={['project-visual', `visual-${slug}`]} aria-hidden="true">
+  {project?.image ? <>
+    <div class="project-art-copy"><span class="art-name">{project.title}</span><strong>Every baht.<br/>In your hands.</strong><span class="art-note">Personal finance, made personal.</span></div>
+    <div class:list={['project-capture', { 'capture-public-preview': project.image.cropPublicPreview }]}><img src={project.image.src} alt="" width="1280" height="720" loading="lazy" /></div>
+    <span class="visual-caption">{project.image.caption}</span>
+  </> : <>
+    {slug === 'loyalty' && <LoyaltyVisual />}
+    {slug === 'court' && <CourtVisual />}
+    <span class="visual-caption">Interface concept / sample data</span>
+  </>}
+</div>
