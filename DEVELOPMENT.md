@@ -18,14 +18,14 @@ npm run preview
 ## Edit content
 
 - `src/data/profile.ts`: name, role, company, availability, biography, contact, and links.
-- `src/data/experience.ts`: work history, education, dates, and tools used at work.
+- `src/data/experience.ts`: work history, education, dates, and role descriptions. Keep company experience separate from toolkit technologies.
 - `src/data/projects.ts`: projects, descriptions, links, and artwork.
-- `src/data/skills.ts`: toolkit categories, descriptions, and technologies.
+- `src/data/skills.ts`: toolkit categories and technologies.
 - `src/data/site.ts`: intro, smooth scroll, motion, cursor, scroll scenes, noise, and scrollbar switches.
 - `src/pages/index.astro`: metadata and section composition.
 - `src/components/`: section layouts and project interface concepts.
 - `src/styles/global.css`: design tokens, responsive layouts, and reduced motion.
-- `src/scripts/`: motion, navigation, project dialogs, image carousel, and toolkit tabs.
+- `src/scripts/`: motion, navigation, project dialogs, image carousel, and toolkit scroll scenes.
 
 The portrait and resume are original assets. Tookbaht uses its public English preview. Loyalty and Court Booking are clearly labeled interface concepts with sample data. Keep `public/github.png` because the original profile README references it.
 

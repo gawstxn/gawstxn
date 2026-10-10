@@ -253,9 +253,6 @@ export function initMotion() {
     gsap.fromTo('.hero-sign > svg', { rotation: 15 }, {
       rotation: 150, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: 0.8 },
     });
-    gsap.fromTo('.portrait-star', { rotation: -10, y: 20 }, {
-      rotation: 17, y: -20, ease: 'none', scrollTrigger: { trigger: '.portrait-wrap', start: 'top bottom', end: 'bottom top', scrub: 0.8 },
-    });
   });
 
   media.add('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)', () => {

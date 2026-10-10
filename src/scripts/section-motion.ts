@@ -1,4 +1,5 @@
 import { gsap } from 'gsap';
+import { initToolkitScroll } from './toolkit';
 
 // These scenes stay tied to scroll position and reverse when scrolling back.
 export function initSectionScroll() {
@@ -20,10 +21,13 @@ export function initSectionScroll() {
     color: '#eaeae5', stagger: 0.08, ease: 'none',
     scrollTrigger: { trigger: '.about-lead', start: 'top 80%', end: 'top 28%', scrub: 0.6 },
   });
-  gsap.fromTo('.portrait-image', { clipPath: 'inset(18% 12% 18% 12% round 3px)' }, {
-    clipPath: 'inset(0% 0% 0% 0% round 3px)', ease: 'none',
-    scrollTrigger: { trigger: '.portrait-image', start: 'top 88%', end: 'top 45%', scrub: 0.8 },
-  });
+  const portrait = document.querySelector<HTMLElement>('.portrait-wrap');
+  if (portrait) {
+    const reveal = gsap.timeline({ scrollTrigger: { trigger: portrait, start: 'top 92%', end: 'top 22%', scrub: 0.7 } });
+    reveal.fromTo(portrait, { rotation: -5, y: 38 }, { rotation: 0, y: 0, duration: 1.1, ease: 'power2.out' }, 0)
+      .fromTo(portrait.querySelectorAll('.portrait-shutters > span'), { y: 0, yPercent: 0 }, { y: 0, yPercent: -102, duration: 0.7, stagger: 0.13, ease: 'power3.inOut' }, 0.08)
+      .fromTo(portrait.querySelector('.portrait-star'), { rotation: -32, y: 48 }, { rotation: 9, y: 0, duration: 1, ease: 'power3.out' }, 0.12);
+  }
 
   document.querySelectorAll<HTMLElement>('.journey-rail').forEach((rail) => {
     gsap.fromTo(rail, { '--journey-progress': 0 }, {
@@ -37,10 +41,5 @@ export function initSectionScroll() {
       .fromTo(entry.querySelector('.experience-content'), { y: 18 }, { y: 0, duration: 0.8, ease: 'power2.out' }, 0.1);
   });
 
-  document.querySelectorAll<HTMLElement>('.toolkit-browser').forEach((browser) => {
-    gsap.fromTo(browser, { clipPath: 'inset(0% 0% 14% 0%)' }, {
-      clipPath: 'inset(0% 0% 0% 0%)', ease: 'none',
-      scrollTrigger: { trigger: browser, start: 'top 92%', end: 'top 45%', scrub: 0.65 },
-    });
-  });
+  initToolkitScroll();
 }

@@ -47,6 +47,27 @@ document.addEventListener('keydown', (event) => {
 mobileMenuQuery.addEventListener('change', () => closeMenu(true));
 closeMenu(true);
 
+const contactControl = document.querySelector<HTMLAnchorElement>('.nav-contact');
+const contactController = new AbortController();
+const contactPointerQuery = window.matchMedia('(min-width: 768px) and (hover: hover) and (pointer: fine)');
+function positionContactFill(event: PointerEvent) {
+  if (!contactControl || !contactPointerQuery.matches || event.pointerType === 'touch') return;
+  const bounds = contactControl.getBoundingClientRect();
+  const x = Math.max(0, Math.min(bounds.width, event.clientX - bounds.left));
+  const y = Math.max(0, Math.min(bounds.height, event.clientY - bounds.top));
+  const radius = Math.hypot(Math.max(x, bounds.width - x), Math.max(y, bounds.height - y));
+  contactControl.style.setProperty('--fill-x', `${x}px`);
+  contactControl.style.setProperty('--fill-y', `${y}px`);
+  contactControl.style.setProperty('--fill-size', `${radius * 2 + 2}px`);
+}
+contactControl?.addEventListener('pointerenter', positionContactFill, { signal: contactController.signal });
+contactControl?.addEventListener('pointerleave', positionContactFill, { signal: contactController.signal });
+contactControl?.addEventListener('focus', () => {
+  if (!contactControl.matches(':focus-visible')) return;
+  ['--fill-x', '--fill-y', '--fill-size'].forEach((property) => contactControl.style.removeProperty(property));
+}, { signal: contactController.signal });
+if (import.meta.hot) import.meta.hot.dispose(() => contactController.abort());
+
 const grid = document.querySelector<HTMLElement>('#project-grid');
 const viewButtons = document.querySelectorAll<HTMLButtonElement>('[data-view]');
 viewButtons.forEach((button) => button.addEventListener('click', () => {

@@ -6,23 +6,31 @@ import ScrollHeading from './ScrollHeading.astro';
 ---
 <section id="about" class="about-section section-space">
   <div class="page-width">
-    <div class="section-heading"><p class="section-note">The person behind the pixels</p><ScrollHeading lines={['A developer.', 'Always a learner.']} /></div>
-    <div class="about-grid grid md:grid-cols-2">
-      <div class="portrait-wrap">
-        <div class="portrait-image"><img src={profile.photo} alt={profile.name} width="750" height="1000" loading="lazy" /></div>
-        <div class="portrait-label"><span>{profile.name}</span><span>Also known as {profile.handle}</span></div>
+    <div class="about-profile">
+      <div class="about-introduction">
+        <p class="section-note">The person behind the pixels</p>
+        <ScrollHeading lines={['A developer.', 'Always a learner.']} />
+        <div class="about-identity"><span>{profile.name}</span><span>{profile.location}</span></div>
+        <a href={profile.resume} target="_blank" rel="noreferrer" class="text-link">View my résumé <Icon /></a>
+      </div>
+      <figure class="portrait-wrap">
+        <div class="portrait-image"><img src={profile.photo} alt={profile.name} width="750" height="1000" loading="lazy" /><div class="portrait-shutters" aria-hidden="true"><span></span><span></span><span></span></div></div>
+        <figcaption class="portrait-label"><span>{profile.name}</span><span>Also known as {profile.handle}</span></figcaption>
         <span class="portrait-star" aria-hidden="true"><Icon name="star" /></span>
+      </figure>
+    </div>
+    <div class="about-story">
+      <div class="about-statement">
+        <p class="about-lead">{'Curious about how things work. Even more curious about how to make them better.'.split(' ').map((word) => <><span class="reading-word">{word}</span>{' '}</>)}</p>
+        <div class="about-principles"><span>Readable code.</span><span>Reliable systems.</span><span>Room to grow.</span></div>
       </div>
       <div class="about-copy">
-        <p class="about-lead">{'Curious about how things work. Even more curious about how to make them better.'.split(' ').map((word) => <><span class="reading-word">{word}</span>{' '}</>)}</p>
         {profile.biography.map((paragraph) => <p>{paragraph}</p>)}
-        <a href={profile.resume} target="_blank" rel="noreferrer" class="text-link">View my résumé <Icon /></a>
-        <div class="about-principles"><span>Readable code.</span><span>Reliable systems.</span><span>Room to grow.</span></div>
       </div>
     </div>
     <div class="experience-journey" id="experience">
       {[{ title: 'Where I work', entries: workExperience, kind: 'work' }, { title: 'Where I started', entries: education, kind: 'education' }].map(({ title, entries, kind }) => <section class={`journey-group journey-${kind}`} aria-label={title}>
-        <div class="journey-label"><h3 data-scroll-heading><span class="scroll-heading-line"><span class="scroll-heading-inner">{title}</span></span></h3><Icon name={kind === 'work' ? 'arrow' : 'star'} /></div>
+        <div class="journey-label"><h3 data-scroll-heading><span class="scroll-heading-line"><span class="scroll-heading-inner">{title}</span></span></h3><span class="journey-symbol" aria-hidden="true"><Icon name={kind === 'work' ? 'arrow' : 'star'} /></span></div>
         <ol class="journey-rail">
           {entries.map((entry) => <li class:list={['experience-entry', { 'is-current': entry.current }]}>
             <span class="journey-dot" aria-hidden="true"></span>
@@ -32,7 +40,6 @@ import ScrollHeading from './ScrollHeading.astro';
               <p class="experience-role">{kind === 'work' ? entry.role : entry.organization}</p>
               {kind === 'work' && entry.organization.includes(' · ') && <span class="experience-context">{entry.organization.split(' · ')[1]}</span>}
               {entry.detail && <p class="experience-detail">{entry.detail}</p>}
-              {entry.tools && <ul class="experience-tools" aria-label="Tools used">{entry.tools.map((tool) => <li>{tool}</li>)}</ul>}
             </div>
           </li>)}
         </ol>

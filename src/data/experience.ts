@@ -6,15 +6,14 @@ export interface Experience {
   period: string;
   detail?: string;
   current?: boolean;
-  tools?: string[];
 }
 
 export const workExperience: Experience[] = [
-  { role: profile.role, organization: profile.company, period: 'Aug 2026 — Present', current: true, detail: 'Building mobile applications with React Native and Expo.', tools: ['React Native', 'Expo'] },
+  { role: profile.role, organization: profile.company, period: 'Aug 2026 — Present', current: true, detail: 'Web and mobile application development.' },
   {
     role: 'Software Developer', organization: 'Codemonday · Cooperative education',
     period: 'Nov 2025 — Feb 2026',
-    detail: 'Full-stack applications, LINE integrations, and automated customer workflows.',
+    detail: 'Full-stack application development and automated customer workflows.',
   },
 ];
 
