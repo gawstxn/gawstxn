@@ -1,0 +1,11 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/profile';
+import Availability from './Availability.astro';
+---
+<section id="home" class="hero page-width">
+        <div class="hero-intro flex justify-between items-center"><p>Hi, I'm {profile.name}.</p><Availability /></div>
+        <div class="hero-title"><h1 aria-label={profile.heroLines.join(' ')}>{profile.heroLines.map((line, index) => <span aria-hidden="true" class:list={['hero-line', { 'hero-line-secondary': index > 0 }]}><span class="hero-line-inner">{line.split('').map((letter) => <span class="hero-character">{letter === ' ' ? '\u00a0' : letter}</span>)}</span></span>)}</h1><div class="hero-sign" aria-hidden="true"><Icon name="star" /><span>From idea<br/>to implementation.</span></div></div>
+        <div class="hero-bottom grid md:grid-cols-2"><div class="hero-description"><p class="multiline">{profile.introduction}</p><a href="#work" class="text-link">Explore my work <Icon name="down" /></a></div><div class="hero-location"><span>Based in {profile.location}</span><span>Local time <time id="local-time">GMT+7</time></span></div></div>
+        <div class="hero-rule"><span>Good software is in the details.</span><span>Scroll to explore <Icon name="down" /></span></div>
+      </section>

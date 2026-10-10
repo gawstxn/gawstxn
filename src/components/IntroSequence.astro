@@ -1,0 +1,34 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/profile';
+import { siteConfig } from '../data/site';
+---
+<script is:inline define:vars={{ introEnabled: siteConfig.intro && siteConfig.motion }}>
+  (() => {
+    const navigation = performance.getEntriesByType('navigation')[0];
+    if (!introEnabled || matchMedia('(prefers-reduced-motion: reduce)').matches || (location.hash && location.hash !== '#home') || navigation?.type === 'back_forward') return;
+    // Prevent reload restoration from moving the navbar during the entrance.
+    document.documentElement.dataset.introScrollRestoration = history.scrollRestoration;
+    history.scrollRestoration = 'manual';
+    document.documentElement.classList.add('intro-pending');
+    // Reveal the page even if the animation bundle cannot load.
+    window.setTimeout(() => {
+      document.documentElement.classList.remove('intro-pending');
+      const restoration = document.documentElement.dataset.introScrollRestoration;
+      if (restoration === 'auto' || restoration === 'manual') history.scrollRestoration = restoration;
+      delete document.documentElement.dataset.introScrollRestoration;
+      document.querySelectorAll('[data-intro-inert]').forEach((element) => {
+        element.removeAttribute('inert');
+        element.removeAttribute('data-intro-inert');
+      });
+    }, 4500);
+  })();
+</script>
+<div class="intro-overlay" aria-label="Introduction">
+  <div class="intro-panels" aria-hidden="true">{Array.from({ length: 6 }, () => <div class="intro-panel" />)}</div>
+  <div class="intro-mark" aria-hidden="true"><Icon name="star" /></div>
+  <div class="intro-lockup" aria-hidden="true"><div class="intro-word">{`${profile.handle}.`.split('').map((letter) => <span><i>{letter}</i></span>)}</div></div>
+  <div class="intro-rule" aria-hidden="true"></div>
+  <div class="intro-caption" aria-hidden="true"><span>{profile.name}</span><span>{profile.role}</span></div>
+  <button class="intro-skip" type="button">Skip intro <span aria-hidden="true">↗</span></button>
+</div>

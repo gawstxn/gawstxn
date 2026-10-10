@@ -1,0 +1,18 @@
+---
+import Icon from './Icon.astro';
+import { projects } from '../data/projects';
+import { profile } from '../data/profile';
+import Availability from './Availability.astro';
+---
+<header class="site-header page-width flex items-center justify-between">
+      <a href="#home" class="brand flex items-center gap-2" aria-label={`${profile.handle} home`}><Icon name="star" /><span>{profile.handle}<span class="brand-dot">.</span></span></a>
+      <button class="menu-toggle" aria-controls="navigation" aria-expanded="false" aria-label="Open navigation"><span></span><span></span></button>
+      <nav id="navigation" aria-label="Main navigation" class="flex items-center">
+        <div class="nav-panel">
+          <a href="#work"><span class="nav-label-mask"><span class="nav-link-label">Work<span class="nav-count">({String(projects.length).padStart(2, '0')})</span></span></span></a>
+          <a href="#about"><span class="nav-label-mask"><span class="nav-link-label">About</span></span></a>
+          <a href="#contact" class="nav-contact"><span class="nav-label-mask"><span class="nav-link-label">Let's talk <Icon /></span></span></a>
+          <div class="nav-footer"><div><span>{profile.location}</span><Availability /></div><a href={`mailto:${profile.email}`}>{profile.email}</a></div>
+        </div>
+      </nav>
+    </header>

@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+import IntroSequence from '../components/IntroSequence.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import HeroSection from '../components/HeroSection.astro';
+import WorkSection from '../components/WorkSection.astro';
+import AboutSection from '../components/AboutSection.astro';
+import SkillsSection from '../components/SkillsSection.astro';
+import ContactSection from '../components/ContactSection.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import ProjectDialogs from '../components/ProjectDialogs.astro';
+import MotionRibbon from '../components/MotionRibbon.astro';
+import { siteConfig } from '../data/site';
+import { profile } from '../data/profile';
+---
+<!doctype html>
+  <html lang="en" data-motion={String(siteConfig.motion)} data-smooth-scroll={String(siteConfig.smoothScroll)} data-hide-scrollbar={String(siteConfig.hideScrollbar)}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#141414" />
+    <title>{profile.name} — {profile.role} | {profile.handle}</title>
+    <meta name="description" content={`${profile.name}, ${profile.role} based in ${profile.location}. Explore web applications, AI integrations, and thoughtful software built for real-world use.`} />
+    <link rel="canonical" href={Astro.site} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta property="og:title" content={`${profile.name} — ${profile.role}`} />
+    <meta property="og:description" content={`Thoughtful interfaces. Reliable systems. Explore selected work by ${profile.handle}.`} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={Astro.site} />
+    <meta property="og:image" content={new URL(profile.photo, Astro.site).href} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;450;500;550;600;650;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    {siteConfig.noise && <div class="grain" aria-hidden="true" style={`--grain-opacity: ${siteConfig.noiseOpacity}`} />}
+    <IntroSequence />
+    <div class="scroll-progress" aria-hidden="true"></div>
+    <div class="site-shell">
+    <a href="#main" class="skip-link">Skip to content</a>
+    <SiteHeader />
+    <main id="main">
+      <HeroSection />
+      <MotionRibbon />
+
+      <WorkSection />
+
+      <AboutSection />
+
+      <SkillsSection />
+
+      <ContactSection />
+    </main>
+    <SiteFooter />
+
+    <ProjectDialogs />
+    </div>
+    <script>
+      import '../scripts/portfolio';
+    </script>
+  </body>
+</html>

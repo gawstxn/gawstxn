@@ -1,0 +1,6 @@
+---
+import Icon from './Icon.astro';
+import { profile } from '../data/profile';
+const year = new Date().getFullYear();
+---
+<footer class="site-footer page-width"><div class="footer-top"><a href="#home" class="brand flex items-center gap-2"><Icon name="star" /><span>{profile.handle}.</span></a><div class="social-links"><a href={profile.github} target="_blank" rel="noreferrer">GitHub <Icon /></a><a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <Icon /></a><a href={profile.instagram} target="_blank" rel="noreferrer">Instagram <Icon /></a></div><a href="#home" class="back-top">Back to top <Icon name="down" /></a></div><div class="footer-bottom"><span>© {year} {profile.name}</span><span>Built with ♡ by {profile.handle}.</span></div></footer>

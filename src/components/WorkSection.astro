@@ -1,0 +1,17 @@
+---
+import Icon from './Icon.astro';
+import ProjectVisual from './ProjectVisual.astro';
+import { profile } from '../data/profile';
+import { projects } from '../data/projects';
+import ScrollHeading from './ScrollHeading.astro';
+---
+<section id="work" class="work-section page-width section-space">
+        <div class="section-heading flex justify-between items-end"><div><p class="section-note">A few things I've built</p><ScrollHeading lines={['Selected work']} count={projects.length} /></div><div class="view-switch" role="group" aria-label="Project layout"><button data-view="grid" aria-pressed="true">Gallery</button><button data-view="list" aria-pressed="false">Index</button></div></div>
+        <div id="project-grid" class="project-grid grid md:grid-cols-2">
+          {projects.map((project) => <article class={`project-card project-${project.slug}`} data-project={project.slug}>
+            <button class="project-open" data-project={project.slug} aria-label={`View ${project.title} details`}><ProjectVisual slug={project.slug} /><span class="project-shutters" aria-hidden="true">{Array.from({ length: 6 }, () => <i />)}</span><span class="project-hover">Explore project <Icon /></span><span class="project-cursor" aria-hidden="true">View <Icon /></span></button>
+            <div class="project-meta"><div><h3><button data-project={project.slug}>{project.title}</button></h3><p>{project.category}</p></div><button class="circle-button" data-project={project.slug} aria-label={`Read about ${project.title}`}><Icon /></button></div>
+          </article>)}
+        </div>
+        <a class="github-link text-link" href={profile.github} target="_blank" rel="noreferrer">More experiments on GitHub <Icon /></a>
+      </section>

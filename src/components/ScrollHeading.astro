@@ -1,0 +1,7 @@
+---
+interface Props { lines: string[]; count?: number; id?: string; }
+const { lines, count, id } = Astro.props;
+---
+<h2 id={id} data-scroll-heading aria-label={`${lines.join(' ')}${count === undefined ? '' : ` (${count})`}`}>
+  {lines.map((line, index) => <span class="scroll-heading-line" aria-hidden="true"><span class="scroll-heading-inner">{line}{index === lines.length - 1 && count !== undefined && <span class="heading-count">({String(count).padStart(2, '0')})</span>}</span></span>)}
+</h2>
