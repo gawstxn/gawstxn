@@ -4,22 +4,14 @@ import ScrollHeading from './ScrollHeading.astro';
 import Icon from './Icon.astro';
 ---
 <section id="toolkit" class="skills-section page-width section-space" aria-labelledby="skills-heading">
-  <div class="skills-intro"><div><p class="section-note">My toolkit</p><ScrollHeading id="skills-heading" lines={['Tools I work with.']} /></div><p>From the interface<br/>to what powers it.</p></div>
-  <div class="toolkit-browser">
-    <div class="toolkit-selector" aria-label="Tool categories">
-      <span class="toolkit-marker" aria-hidden="true"></span>
-      {skills.map((group, index) => <button type="button" id={`tool-tab-${index}`} data-tool-tab={index} aria-controls={`tool-panel-${index}`}><span>{group.title}</span><span class="toolkit-tab-end"><span>{group.items.length}</span><Icon /></span></button>)}
-    </div>
-    <div class="toolkit-panels">
-      {skills.map((group, index) => <section id={`tool-panel-${index}`} class="toolkit-panel" aria-labelledby={`tool-tab-${index}`} data-tool-panel={index}>
-        <div class="toolkit-panel-heading"><h3>{group.title}</h3><p>{group.description}</p></div>
-        <ul class="toolkit-tools" aria-label={`${group.title} tools`}>{group.items.map((item) => <li><span class="tool-name">{item}</span><Icon name="star" /></li>)}</ul>
-      </section>)}
-    </div>
+  <div class="skills-intro"><div><p class="section-note">My toolkit</p><ScrollHeading id="skills-heading" lines={['Tools & technologies.']} /></div></div>
+  <div class="toolkit-map">
+    <span class="toolkit-spine" aria-hidden="true"></span>
+    <span class="toolkit-hub" aria-hidden="true"><Icon name="star" /></span>
+    {skills.map((group) => <section class="toolkit-group" aria-label={group.title}>
+      <span class="toolkit-node" aria-hidden="true"></span>
+      <h3>{group.title}</h3>
+      <ul class="toolkit-terms" role="list">{group.items.map((item) => <li><span class="toolkit-word">{item}</span></li>)}</ul>
+    </section>)}
   </div>
 </section>
-<script>
-  import { initToolkit } from '../scripts/toolkit';
-  const dispose = initToolkit();
-  if (import.meta.hot) import.meta.hot.dispose(dispose);
-</script>

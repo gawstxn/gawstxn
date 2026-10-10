@@ -11,7 +11,7 @@ import Availability from './Availability.astro';
         <div class="nav-panel">
           <a href="#work"><span class="nav-label-mask"><span class="nav-link-label">Work<span class="nav-count">({String(projects.length).padStart(2, '0')})</span></span></span></a>
           <a href="#about"><span class="nav-label-mask"><span class="nav-link-label">About</span></span></a>
-          <a href="#contact" class="nav-contact"><span class="nav-label-mask"><span class="nav-link-label">Let's talk <Icon /></span></span></a>
+          <a href="#contact" class="nav-contact" aria-label="Let's talk"><span class="nav-label-mask"><span class="nav-link-label"><span class="nav-contact-copy"><span>Let's talk</span><span aria-hidden="true">Let's talk</span></span><span class="nav-contact-arrow" aria-hidden="true"><Icon /><Icon /></span></span></span></a>
           <div class="nav-footer"><div><span>{profile.location}</span><Availability /></div><a href={`mailto:${profile.email}`}>{profile.email}</a></div>
         </div>
       </nav>

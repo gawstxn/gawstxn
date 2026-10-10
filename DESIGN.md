@@ -37,6 +37,8 @@ The hero is left aligned and typographic. A real Tookbaht public preview and two
 
 The motion layer follows one identity system: the asterisk draws and lands in the navbar, six shutters uncover project cards, and a typographic ribbon moves with scroll. Hero characters respond to pointer proximity. Scroll-scrubbed headings, portrait masking, word highlighting, experience rules, toolkit rows, and the contact title reverse when scrolling upward. FLIP connects Gallery/Index layouts. Full-screen project stories reveal their final layout through a full-width curtain from the top edge, with masked title words. Closing retreats to the top edge without stretching or scaling artwork. Project-to-project browsing uses a short directional entrance. The mobile menu shares the curtain and masked-type vocabulary on an ink surface; its timeline reverses continuously on rapid toggles.
 
+The desktop navbar contact button fills radially from the pointer's entry point, then retracts toward its exit point. Its text rolls to a duplicate masked line while the arrow passes diagonally through its own mask. Keyboard focus uses the same sequence from the center. Reduced motion or the disabled motion setting makes the state change immediate. Mobile retains the single large menu label and arrow.
+
 The branded intro reveals characters individually before six dark panels rise into the hero. It lasts about 3.5 seconds, is skippable, and bypasses deep links and history navigation. The navbar stays stationary during the icon handoff, and reload scroll restoration is suspended until the entrance ends. It makes no asset-loading or progress-percentage claims.
 
 Lenis wheel and anchor scrolling shares GSAP's ticker. Touch input stays native. Reduced-motion preferences remove all scenes and smoothing, including live preference changes. The manual image carousel uses a single GSAP scroll tween to settle on an image after input ends; the page itself has no scroll snapping, continuous ambient motion, or pinned content.
@@ -58,20 +60,36 @@ Current employment and availability are confirmed in profile data. Loyalty and C
 
 ### Experience and toolkit
 
-Keep the existing Ink, Studio, Paper, Graphite, and Blueprint palette and Instrument Sans. Use the employment timeline as the main typographic gesture: a narrow section label alongside a wide chronological rail, with Apex Maven at the largest scale. Education uses the same rail at a quieter scale, preserving the actual dates and qualifications. Scroll fills the vertical rail and draws each horizontal separator; text remains readable throughout and reverses continuously.
+Keep the existing Ink, Studio, Paper, Graphite, and Blueprint palette and Instrument Sans. The About section becomes a portrait spread: the large introduction, name, location, and resume link sit beside the original color portrait. The portrait sits over a slightly offset blue backing sheet, with the original square asterisk at its corner. One scroll timeline lifts and straightens the print while three vertical shutters retreat in sequence and the badge settles into place. The photo retains its original color and is never stretched or scaled. The sequence works on desktop and mobile and reverses upward. Without motion, the complete portrait remains visible. A separate two-column story pairs the reading statement with the biography and quiet principles.
 
-The toolkit becomes a category selector beside a spacious tool board. Category names provide navigation, individual technology names become readable tiles, and a short description explains each category. Mobile starts selected to reflect current React Native / Expo work. Keyboard arrows, Home, and End navigate the selector. Switching categories moves the active marker and reveals the new tools in one short gesture; reduced motion switches immediately. Without JavaScript every category remains visible. This avoids a logo cloud or unsupported proficiency scores, and keeps content editable in the existing data files.
+Career and education form two adjacent chapters, each with its own title, symbol, and chronological rail. Dates sit above the entry titles. Apex Maven retains the current-role badge; education preserves the actual degrees, dates, and honours. Mobile stacks both chapters in reading order. Scroll fills each rail and draws separators; content remains readable throughout and reverses continuously.
+
+The toolkit uses a connected map on a faint drafting grid, retaining Ink `#141414`, Studio `#1c1c1b`, Paper `#eaeae5`, Graphite `#a1a19b`, Blueprint `#526bff`, and Instrument Sans. Six category clusters branch from a central blue spine. Outlined capsules keep all 21 technology names readable without tabs or tool cards. The map presents category membership rather than dependencies or an employer's stack. Mobile moves the spine to the left and places the clusters in reading order.
+
+Scroll traces the spine and branches while the technology capsules settle into place, reversing upward. Names stay visible during the motion, and hovering a capsule highlights its outline. No proficiency scores, additional technology claims, or automatic slides are introduced. Reduced motion and disabled section motion leave the complete map immediately readable. Intro and footer symbols use SVG paths so mobile fonts cannot replace them with emoji artwork.
 
 ```text
-Where I work       Date     Apex Maven / Current
-                   rail     Role / description / React Native / Expo
-                            Codemonday / Cooperative education
-Where I started    Date     Degree / University / Honours
-                            Vocational certificate / College
+Introduction / name / location       Color portrait / blue square mark
+Resume                               Name / handle
+Reading statement / principles       Biography
 
-My toolkit / Tools I work with
-Category selector          Selected category / description
-                           Individual technology tiles
+Where I work                         Where I started
+Date / Current                       Date
+Apex Maven / Role                    Degree / University / Honours
+Date                                 Date
+Codemonday / Cooperative education   Vocational certificate / College
+
+My toolkit / Tools & technologies
+                              Identity mark
+                                   |
+Languages -------------------------o---------------- Frameworks & libraries
+[TypeScript] [JavaScript] [Python]  |                 [React] [Next.js] ...
+                                   |
+UI & styling ----------------------o---------------- Databases
+[Tailwind CSS] [shadcn/ui]          |                 [PostgreSQL] ...
+                                   |
+APIs & services -------------------o---------------- Development tools
+[Gemini API] [LINE Messaging API]   |                 [Git] [Docker]
 ```
 
 ### Project gallery and continuous browsing
